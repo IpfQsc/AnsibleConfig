@@ -1,0 +1,49 @@
+
+######################################## L I N U X  ########################################################################################
+
+[DmsLinProd]
+
+[QaeLinProd]
+
+[DmsLinQlod]
+aonorte            ansible_user=root
+aoarregui          ansible_user=rootquiter   ansible_python_interpreter=/usr/bin/python3   ### quitar warning python3.6
+aomendaur          ansible_user=aquiter                                                    ### aquiter sudo
+
+[DmsLinTest]
+gmarcospruebas     ansible_user=root         ansible_python_interpreter=/usr/bin/python3   ### Centos5 python KO ansible_shell_executable=/bin/sh 
+gmontaltpruebas    ansible_user=root 
+TestRockyDms       ansible_user=rootquiter
+
+[QaeLinTest]
+gmontaltqaepruebas ansible_user=root
+mavisaqaepruebas   ansible_user=root
+
+######################################## W I N D O W S #####################################################################################
+
+[DmsWinTest]
+TestW2019Dms       ansible_user=administrador ansible_password=Quiter.2019 ansible_port=5985
+#TestW2019Dms       ansible_user=administrador ansible_password=Quiter.2019 ansible_port=5986
+
+[DmsWinProd]
+Parametrizacion    ansible_user=administrator ansible_password=Parm1nform  ansible_port=5985 ansible_host=parametrizacion.intraquiter2
+
+######################################## G R U P O S #######################################################################################
+
+[LINUX:children]
+DmsLinQlod
+DmsLinProd
+QaeLinProd
+DmsLinTest
+QaeLinTest
+
+[WINDOWS:children]
+DmsWinTest
+DmsWinProd
+
+[WINDOWS:vars]
+#ansible_port=5986
+#ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
