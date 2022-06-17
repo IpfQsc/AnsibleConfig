@@ -1,0 +1,9 @@
+---
+- name: win ping module demo
+  hosts: WINDOWS
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Test WinRm Connection
+      ansible.windows.win_ping:

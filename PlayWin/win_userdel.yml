@@ -1,0 +1,14 @@
+---
+- name: Test user is present
+  hosts: WINDOWS
+  become: false
+
+  vars:
+    myuser: "logintest"
+
+  tasks:
+   - name: Delete user {{ myuser }} if present
+     ansible.windows.win_user:
+       name: "{{myuser}}"
+       state: absent
+

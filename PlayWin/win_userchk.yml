@@ -1,0 +1,13 @@
+---
+- name: Test user is present
+  hosts: WINDOWS
+  become: false
+
+  vars:
+    myuser: "logintest"
+
+  tasks:
+   - name: testing user {{ myuser }} is present
+     ansible.windows.win_user:
+       name: "{{myuser}}"
+       state: query
