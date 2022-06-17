@@ -1,0 +1,14 @@
+---
+- name: Delete user
+  hosts: LINUX
+  become: true
+
+  vars:
+    myuser: "logintest"
+
+  tasks:
+    - name: delete user {{ myuser }} if present
+      ansible.builtin.user:
+        name: "{{ myuser }}"
+        state: "absent"
+        remove: true

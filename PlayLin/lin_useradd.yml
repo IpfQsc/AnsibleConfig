@@ -1,0 +1,20 @@
+---
+- name: Create user 
+  hosts: LINUX
+  become: true
+
+  vars:
+    myuser: "logintest"
+    mypass: "Quiter.2022"
+
+  tasks:
+    - name: Adding user {{ myuser }}
+      ansible.builtin.user:
+        name: "{{ myuser }}"
+        createhome: yes
+        home: /home/logintest
+        password: "{{ mypass | password_hash('sha512') }}"
+        #group: quiter
+        # en los Qae no hay grupo quiter
+        # hash Quiter.2022
+        #password: '$6$NaU1qNpV$MIPsxom1I414poBGRBCEVS3MHGo3ZnjA0hzUp55qamjYgdtfqX6.P3yppBsrv4OhTrtcM2qFBNPeXhkxnqKq1/'
