@@ -1,0 +1,29 @@
+---
+######################################## L I N U X  ########################################################################################
+
+LINUX:
+    children:
+       DmsLinQlod:
+         hosts:
+            AoNorte:
+                ansible_host : aonorte
+                ansible_user : root
+            AoArregui:
+                ansible_host : aoarregui
+                ansible_user : rootquiter
+                ansible_python_interpreter : /usr/bin/python3   ### quitar warning python3.6
+            AoMendaur:
+                ansible:host : aomendaur
+                ansible_user : aquiter ### aquiter sudo
+
+       DmsLinTest:
+         hosts:
+            TestRockyDms:
+                ansible_host : testrockydms
+                ansible_user : rootquiter
+
+       QaeLinTest:
+         hosts:
+            TestRockyQae:
+                ansible_host : testrockydms
+                ansible_user : rootquiter
