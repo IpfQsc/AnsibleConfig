@@ -1,4 +1,5 @@
----
+######################################## W I N D O W S #####################################################################################
+
 WINDOWS:
     vars:
         #ansible_port                        : 5986
@@ -7,23 +8,25 @@ WINDOWS:
         ansible_winrm_transport              : basic
         ansible_winrm_server_cert_validation : ignore
     children:
-   
         DmsWinTest:
-            TestW2019Dms:
-                ansible_host     : testw2029dms
+          hosts:
+            DmsW2019P5985:
+                ansible_host     : testw2019dms
                 ansible_user     : administrador
                 ansible_password : Quiter.2019
                 ansible_port     : 5985
-            TestW2019Dms:
+            DmsW2019P5986:
                 ansible_host     : 10.77.24.190
                 ansible_user     : administrador
                 ansible_password : Quiter.2019
                 ansible_port     : 5986
 
         DmsWinProd:
+          hosts:
             Parametrizacion:
                 ansible_host     : parametrizacion.intraquiter2
                 ansible_user     : administrator
                 ansible_password : Parm1nform
                 ansible_port     : 5985
+
 
