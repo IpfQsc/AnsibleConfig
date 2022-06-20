@@ -1,6 +1,5 @@
 ---
 ######################################## L I N U X  ########################################################################################
-
 LINUX:
     children:
        DmsLinQlod:
@@ -15,13 +14,11 @@ LINUX:
             AoMendaur:
                 ansible:host: aomendaur
                 ansible_user: aquiter ### aquiter sudo
-
        DmsLinTest:
          hosts:
             TestRockyDms:
                 ansible_host: testrockydms
                 ansible_user: rootquiter
-
        QaeLinTest:
          hosts:
             TestRockyQae:
