@@ -8,23 +8,28 @@ LINUX:
             AoNorte:
                 ansible_host : aonorte
                 ansible_user : root
+                ansible_password : ecnlsnd
             AoArregui:
                 ansible_host : aoarregui
                 ansible_user : rootquiter
+                ansible_password : HecnlsndS
                 ansible_python_interpreter : /usr/bin/python3   ### quitar warning python3.6
             AoMendaur:
                 ansible:host : aomendaur
                 ansible_user : aquiter ### aquiter sudo
+                ansible_password : HecnlsndS
 
        DmsLinTest:
          hosts:
             TestRockyDms:
                 ansible_host : testrockydms
                 ansible_user : rootquiter
+                ansible_password : HecnlsndS.0942
 
        QaeLinTest:
          hosts:
             TestRockyQae:
                 ansible_host : testrockydms
                 ansible_user : rootquiter
+                ansible_password : HecnlsndS.0942
 
