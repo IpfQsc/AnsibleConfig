@@ -7,9 +7,10 @@
     myuser: "ftpq"
 
   tasks:
-  - name: testing user {{ myuser }} no present (ok absent)
+  - name: testing user {{ myuser }} exist
+    check_mode: yes
     ansible.builtin.user:
       name: "{{ myuser }}"
-      state: "absent"
+      state: "present"
       #state: "present" OK cuando existe
 
