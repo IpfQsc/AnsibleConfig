@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    myuser: "logintest"
+    myuser: "ftpq"
 
   tasks:
   - name: testing user {{ myuser }} no present (ok absent)
