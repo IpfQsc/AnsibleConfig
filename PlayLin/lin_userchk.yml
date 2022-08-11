@@ -8,9 +8,8 @@
 
   tasks:
   - name: testing user {{ myuser }} exist
-    check_mode: yes
     ansible.builtin.user:
       name: "{{ myuser }}"
       state: "present"
-      #state: "present" OK cuando existe
+    check_mode: yes  
 
