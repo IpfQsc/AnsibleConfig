@@ -11,9 +11,4 @@
     ansible.builtin.user:
       name: "{{ myuser }}"
       state: "absent"
-      register: status   
-
-  - name: output result above
-    debug:
-      msg: "{{ status }}"
 
