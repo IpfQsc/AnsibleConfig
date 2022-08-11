@@ -11,5 +11,6 @@
     ansible.builtin.user:
       name: "{{ myuser }}"
       state: "present"
-    check_mode: yes  
+    check_mode: yes 
+    # No hace cambios pero nos dice si lo quiere dar de alta 
 
