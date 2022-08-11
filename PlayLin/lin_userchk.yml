@@ -7,8 +7,9 @@
     myuser: "logintest"
 
   tasks:
-  - name: testing user {{ myuser }} is present
+  - name: testing user {{ myuser }} no present (ok absent)
     ansible.builtin.user:
       name: "{{ myuser }}"
       state: "absent"
+      #state: "present" OK cuando existe
 
