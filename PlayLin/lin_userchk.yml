@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    myuser: "ftpq"
+    myuser: "logintest"
 
   tasks:
   - name: testing user {{ myuser }} exist
