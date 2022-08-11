@@ -27,6 +27,7 @@ TestW2019Dms       ansible_user=administrador ansible_password=Quiter.2019 ansib
 
 [DmsWinProd]
 Parametrizacion    ansible_user=administrator ansible_password=Parm1nform  ansible_port=5985 ansible_host=parametrizacion.intraquiter2
+ParametrizacionAWX ansible_user=administrator ansible_port=5985 ansible_host=10.8.7.48
 
 ######################################## G R U P O S #######################################################################################
 
