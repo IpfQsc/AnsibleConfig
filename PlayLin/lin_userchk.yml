@@ -8,13 +8,11 @@
 
   tasks:
    - name: testing user {{ myuser }} is present
-       user: 
-       name: "{{ myuser }}"
-     state: present
+      name: "{{ myuser }}"
+      state: present
    check_mode: yes
    register: status
 
   - name: output result above
     debug:
       msg: "{{ status }}"
-      
