@@ -7,10 +7,11 @@
     myuser: "logintest"
 
   tasks:
-  - name: testing user {{ myuser }} exist
-    ansible.builtin.user:
-      name: "{{ myuser }}"
-      state: "present"
-    check_mode: yes 
-    # No hace cambios pero nos dice si lo quiere dar de alta 
+   - name: testing user {{ myuser }} is present
+     getent:
+       database: passwd
+       key: "{{ myuser }}"
+       fail_key: false
+       #fail_key: true cuando el usuario no esta da fallo (rojo)
+
 
