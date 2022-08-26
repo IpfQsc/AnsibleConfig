@@ -18,6 +18,7 @@ LINUX:
                 ansible:host : aomendaur
                 ansible_user : aquiter ### aquiter sudo
                 ansible_password : HecnlsndS
+                ansible_sudo_pass : HecnlsndS
 
        DmsLinTest:
          hosts:
